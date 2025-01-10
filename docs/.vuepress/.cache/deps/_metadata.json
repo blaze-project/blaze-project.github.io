@@ -1,0 +1,112 @@
+{
+  "hash": "d8e5e077",
+  "configHash": "4fcc7d20",
+  "lockfileHash": "247e7afe",
+  "browserHash": "a24b1d64",
+  "optimized": {
+    "@vue/devtools-api": {
+      "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
+      "file": "@vue_devtools-api.js",
+      "fileHash": "9bf916f8",
+      "needsInterop": false
+    },
+    "@vuepress/shared": {
+      "src": "../../../../node_modules/@vuepress/shared/dist/index.js",
+      "file": "@vuepress_shared.js",
+      "fileHash": "e7069d86",
+      "needsInterop": false
+    },
+    "vue": {
+      "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "12526caa",
+      "needsInterop": false
+    },
+    "vue-router": {
+      "src": "../../../../node_modules/vue-router/dist/vue-router.esm-bundler.js",
+      "file": "vue-router.js",
+      "fileHash": "d876a46c",
+      "needsInterop": false
+    },
+    "vue-echarts": {
+      "src": "../../../../node_modules/vue-echarts/dist/index.js",
+      "file": "vue-echarts.js",
+      "fileHash": "517c8997",
+      "needsInterop": false
+    },
+    "echarts": {
+      "src": "../../../../node_modules/echarts/index.js",
+      "file": "echarts.js",
+      "fileHash": "9d1d7cf9",
+      "needsInterop": false
+    },
+    "echarts/core": {
+      "src": "../../../../node_modules/echarts/core.js",
+      "file": "echarts_core.js",
+      "fileHash": "1246446f",
+      "needsInterop": false
+    },
+    "echarts/renderers": {
+      "src": "../../../../node_modules/echarts/renderers.js",
+      "file": "echarts_renderers.js",
+      "fileHash": "8c5a7d95",
+      "needsInterop": false
+    },
+    "echarts/charts": {
+      "src": "../../../../node_modules/echarts/charts.js",
+      "file": "echarts_charts.js",
+      "fileHash": "8c78d91f",
+      "needsInterop": false
+    },
+    "echarts/components": {
+      "src": "../../../../node_modules/echarts/components.js",
+      "file": "echarts_components.js",
+      "fileHash": "1eecbb26",
+      "needsInterop": false
+    },
+    "vue-github-button": {
+      "src": "../../../../node_modules/vue-github-button/index.js",
+      "file": "vue-github-button.js",
+      "fileHash": "0e4b0aef",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "buttons.esm-EID27Q46": {
+      "file": "buttons__esm-EID27Q46.js"
+    },
+    "chunk-NHDPEF63": {
+      "file": "chunk-NHDPEF63.js"
+    },
+    "chunk-5TS2OOE4": {
+      "file": "chunk-5TS2OOE4.js"
+    },
+    "chunk-V2E3J5VY": {
+      "file": "chunk-V2E3J5VY.js"
+    },
+    "chunk-KVQL5XPY": {
+      "file": "chunk-KVQL5XPY.js"
+    },
+    "chunk-QLFKXR3Y": {
+      "file": "chunk-QLFKXR3Y.js"
+    },
+    "chunk-MJBQLJKK": {
+      "file": "chunk-MJBQLJKK.js"
+    },
+    "chunk-MLJFJAVP": {
+      "file": "chunk-MLJFJAVP.js"
+    },
+    "chunk-Z3QIROJ2": {
+      "file": "chunk-Z3QIROJ2.js"
+    },
+    "chunk-BEM25M4T": {
+      "file": "chunk-BEM25M4T.js"
+    },
+    "chunk-QMKPW5JG": {
+      "file": "chunk-QMKPW5JG.js"
+    },
+    "chunk-PZ5AY32C": {
+      "file": "chunk-PZ5AY32C.js"
+    }
+  }
+}
