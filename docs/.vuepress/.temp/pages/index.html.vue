@@ -101,6 +101,7 @@
   <div class="partners-container">
     <div class="partners">
       <div class="partner-logo"><img src="@source/img/logo/kwai.png" /></div>
+      <div class="partner-logo"><img src="@source/img/logo/didiglobal.webp" /></div>
       <div class="partner-logo"><img src="@source/img/logo/bilibili.png" /></div>
       <div class="partner-logo"><img src="@source/img/logo/xiecheng.png" /></div>
       <div class="partner-logo"><img src="@source/img/logo/car.png" /></div>
