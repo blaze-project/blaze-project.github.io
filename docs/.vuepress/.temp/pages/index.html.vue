@@ -115,6 +115,7 @@
       <div class="partner-logo"><img src="@source/img/logo/huaxia.png" /></div>
       <div class="partner-logo"><img src="@source/img/logo/ssc.png" /></div>
       <div class="partner-logo"><img src="@source/img/logo/hair.png" /></div>
+      <div class="partner-logo"><img src="@source/img/logo/dazhen.jpg" /></div>
     </div>
   </div>
 </div>
