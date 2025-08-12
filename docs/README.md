@@ -125,6 +125,7 @@ footer: MIT License | Copyright © 2022- the Blaze community
       <div class="partner-logo"><img src="./img/logo/ssc.png" /></div>
       <div class="partner-logo"><img src="./img/logo/hair.png" /></div>
       <div class="partner-logo"><img src="./img/logo/dazhen.jpg" /></div>
+      <div class="partner-logo"><img src="./img/logo/lbxdyf.jpg" /></div>
     </div>
   </div>
 </div>
