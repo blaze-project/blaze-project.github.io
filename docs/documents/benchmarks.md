@@ -6,7 +6,7 @@ title: Benchmarks
 
 ## Benchmark Result
 
-Here is the benchmark result of TPC-DS 1TB Dataset, running under Spark-3.5 and Auron-4.0.1-preview.
+Here is the benchmark result of TPC-DS 1TB Dataset, running under Spark-3.5.6 and Auron-6.0.0-preview (dc8d7a9).
 
 <BenchmarkChart />
 
@@ -68,15 +68,11 @@ here is a simple configuration used for benchmarking, please notice that the ben
 
 ```sh
 spark.master yarn
-spark.yarn.stagingDir.list hdfs://auron-test/home/spark/user/
+spark.yarn.queue offline
 
 spark.eventLog.enabled true
-spark.eventLog.dir hdfs://auron-test/home/spark-eventlog
-spark.history.fs.logDirectory hdfs://auron-test/home/spark-eventlog
-
-spark.externalBlockStore.url.list hdfs://auron-test/home/platform
-spark.driver.extraJavaOptions -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/media/disk1/spark/ -Djava.io.tmpdir=/media/disk1/tmp -Dlog4j2.formatMsgNoLookups=true
-spark.local.dir /media/disk1/spark/localdir
+spark.eventLog.dir hdfs:///home/spark-eventlog
+spark.history.fs.logDirectory hdfs:///home/spark-eventlog
 
 spark.shuffle.service.enabled true
 spark.shuffle.service.port 7337
@@ -86,26 +82,31 @@ spark.driver.memoryOverhead 4096
 
 spark.executor.instances 10000
 spark.dynamicallocation.maxExecutors 10000
-spark.executor.cores 5
+spark.executor.cores 8
 
-spark.io.compression.codec zstd
+spark.io.compression.codec lz4
 spark.sql.parquet.compression.codec zstd
 
 # benchmark without auron
-#spark.executor.memory 6g
-#spark.executor.memoryOverhead 2048
+#spark.executor.memory 20g
+#spark.executor.memoryOverhead 4096
 
 # benchmark with auron
-spark.executor.memory 4g
-spark.executor.memoryOverhead 4096
-spark.auron.enable true
+spark.executor.memory 8g
+spark.executor.memoryOverhead 16384
 spark.sql.extensions org.apache.spark.sql.auron.AuronSparkSessionExtension
 spark.shuffle.manager org.apache.spark.sql.execution.auron.shuffle.AuronShuffleManager
 spark.memory.offHeap.enabled false
 
-# spark3.3+ disable char/varchar padding
-#spark.sql.readSideCharPadding false
+spark.auron.enable true
+spark.auron.memoryFraction 0.8
+spark.auron.process.vmrss.memoryFraction 0.8
+spark.auron.tokio.worker.threads.per.cpu 1
 
-# enable shuffled hash join
-#spark.sql.join.preferSortMergeJoin false
+spark.auron.forceShuffledHashJoin true
+spark.auron.smjfallback.enable true
+spark.auron.smjfallback.mem.threshold 512000000
+
+spark.auron.udafFallback.enable true
+spark.auron.partialAggSkipping.skipSpill true
 ```

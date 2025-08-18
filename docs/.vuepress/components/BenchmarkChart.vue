@@ -60,7 +60,7 @@ const option = ref({
   },
   series: [
     {
-      name: 'Spark-3.5',
+      name: 'Spark-3.5.6',
       type: 'bar',
       barWidth: 2,
       data: sparkResultValues,
@@ -68,7 +68,7 @@ const option = ref({
         data: [{ type: 'average', name: 'Average' }],
       },
     }, {
-      name: 'Blaze-4.0.1-preview (5651e6e)',
+      name: 'Auron-6.0.0-preview (dc8d7a9)',
       type: 'bar',
       barWidth: 2,
       data: blazeResultValues,
