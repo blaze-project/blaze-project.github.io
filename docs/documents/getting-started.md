@@ -2,11 +2,11 @@
 title: Getting-Started
 ---
 
-# Getting Started with Blaze for Apache Spark
+# Getting Started with Auron for Apache Spark
 
 ## Build from source
 
-To build Blaze, please follow the steps below:
+To build Auron, please follow the steps below:
 
 1. Install Rust
 
@@ -15,13 +15,13 @@ compilation. We recommend you to use [rustup](https://rustup.rs/).
 
 2. Install JDK
 
-Blaze has been well tested on jdk8/11/17, should work fine with higher versions.
+Auron has been well tested on jdk8/11/17, should work fine with higher versions.
 
 3. Check out the source code.
 
 ```shell
-git clone git@github.com:kwai/blaze.git
-cd blaze
+git clone git@github.com:kwai/auron.git
+cd auron
 ```
 
 4. Build the project.
@@ -37,8 +37,8 @@ Currently we have supported these shims:
 * spark-3.4 - for spark3.4.x
 * spark-3.5 - for spark3.5.x.
 
-You could either build Blaze in pre mode for debugging or in release mode to unlock the full potential of
-Blaze.
+You could either build Auron in pre mode for debugging or in release mode to unlock the full potential of
+Auron.
 
 ```shell
 SHIM=spark-3.5 # or spark-3.0/spark-3.1/spark-3.2/spark-3.3/spark-3.4/spark-3.5
@@ -57,18 +57,18 @@ You can use the following command to build a centos-7 compatible release:
 SHIM=spark-3.5 MODE=release ./release-docker.sh
 ```
 
-## Run Spark Job with Blaze Accelerator
+## Run Spark Job with Auron Accelerator
 
-This section describes how to submit and configure a Spark Job with Blaze support.
+This section describes how to submit and configure a Spark Job with Auron support.
 
-1. move blaze jar package to spark client classpath (normally `spark-xx.xx.xx/jars/`).
+1. move auron jar package to spark client classpath (normally `spark-xx.xx.xx/jars/`).
 
 2. add the follow confs to spark configuration in `spark-xx.xx.xx/conf/spark-default.conf`:
 
 ```properties
-spark.blaze.enable true
-spark.sql.extensions org.apache.spark.sql.blaze.BlazeSparkSessionExtension
-spark.shuffle.manager org.apache.spark.sql.execution.blaze.shuffle.BlazeShuffleManager
+spark.auron.enable true
+spark.sql.extensions org.apache.spark.sql.auron.AuronSparkSessionExtension
+spark.shuffle.manager org.apache.spark.sql.execution.auron.shuffle.AuronShuffleManager
 spark.memory.offHeap.enabled false
 
 # suggested executor memory configuration

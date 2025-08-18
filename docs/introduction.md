@@ -3,7 +3,7 @@ title: Introduction
 ---
 
 ## Overview
-The [Blaze](https://github.com/kwai/blaze) accelerator for Apache Spark leverages native vectorized execution to accelerate query processing. It combines the power of the Apache Arrow-DataFusion library and the scale of the Spark distributed computing framework.
+The [Auron](https://github.com/kwai/auron) accelerator for Apache Spark leverages native vectorized execution to accelerate query processing. It combines the power of the Apache Arrow-DataFusion library and the scale of the Spark distributed computing framework.
 
 
 ## Introduction
@@ -11,21 +11,21 @@ The [Blaze](https://github.com/kwai/blaze) accelerator for Apache Spark leverage
 ### Problem Statement
 Apache Spark is a popular distributed computing framework for handling large-scale data processing tasks. However, as the data size increases, traditional row-based processing can lead to significant CPU latencies and become a performance bottleneck. To overcome this challenge, vectorized execution technology has been introduced as an optimization method for Spark. 
 
-### Blaze’s Solution
-Vectorized execution technology operates by processing data in batches rather than rows, reducing function calls and improving computation performance with SIMD instructions. Blaze leverages this technology by integrating the Apache Arrow-DataFusion library with the Spark framework.
+### Auron’s Solution
+Vectorized execution technology operates by processing data in batches rather than rows, reducing function calls and improving computation performance with SIMD instructions. Auron leverages this technology by integrating the Apache Arrow-DataFusion library with the Spark framework.
 
-Blaze checks and translates supported operators in the Spark's physical plan and generates an equivalent native execution plan, then it passes the generated execution plan to the underlying native engine through JNI calls. The native engine executes the plan with DataFusion framework, which benefits from vectorized execution and has better performance comparing to Spark's JVM based execution.
+Auron checks and translates supported operators in the Spark's physical plan and generates an equivalent native execution plan, then it passes the generated execution plan to the underlying native engine through JNI calls. The native engine executes the plan with DataFusion framework, which benefits from vectorized execution and has better performance comparing to Spark's JVM based execution.
 
 ### Target User
-Blaze's target users are those who want to accelerate Spark SQL/DataFrame queries. Users can install Blaze as a Spark client extension. After installing, most SQL queries should run faster without modifying, and save cluster resources.
+Auron's target users are those who want to accelerate Spark SQL/DataFrame queries. Users can install Auron as a Spark client extension. After installing, most SQL queries should run faster without modifying, and save cluster resources.
 
 ## Architecture
-The architecture design of Blaze is as follows.
-Blaze takes a fully optimized physical plan from Spark, mapping it into equivalent execution plan implemented in native engine, and executes in Spark distributed environment.
+The architecture design of Auron is as follows.
+Auron takes a fully optimized physical plan from Spark, mapping it into equivalent execution plan implemented in native engine, and executes in Spark distributed environment.
 
-![Spark+Blaze architecture](./img/blaze_architecture.png)
+![Spark+Auron architecture](./img/auron_architecture.webp)
 
-Blaze is composed of the following high-level components:
+Auron is composed of the following high-level components:
 
 - **Spark Extension**: hooks the whole accelerator into Spark execution lifetime.
 - **Spark Shims**: specialized codes for different versions of spark.
@@ -37,13 +37,13 @@ Blaze is composed of the following high-level components:
 
 The architecture diagram of the **native engine** is as follows:
 
-![Blaze Native Engine](./img/blaze_native_engine.png)
+![Auron Native Engine](./img/auron_native_engine.webp)
 
 ### Currently Supported Native Operators/Expressions
 
-All supported operators in Blaze are listed below. Blaze does support fallbacking an operator to spark execution which has not been implemented, so SQLs containing unsupported operators can still be executed successfully. However, fallbacks takes extra costs, too many fallbacks will slow down the execution.
+All supported operators in Auron are listed below. Auron does support fallbacking an operator to spark execution which has not been implemented, so SQLs containing unsupported operators can still be executed successfully. However, fallbacks takes extra costs, too many fallbacks will slow down the execution.
 
-Most spark builtin expressions are supported in Blaze (by translating to DataFusion-physical-exprs). Blaze also supports expression-level fallbacking, which can fallback a single unsupported expression to spark execution. so SQLs containing some unsupported expressions like UDF/UDTFs can still be optimized.
+Most spark builtin expressions are supported in Auron (by translating to DataFusion-physical-exprs). Auron also supports expression-level fallbacking, which can fallback a single unsupported expression to spark execution. so SQLs containing some unsupported expressions like UDF/UDTFs can still be optimized.
 
 <table class="my-table3">
   <tr>
@@ -135,10 +135,10 @@ Most spark builtin expressions are supported in Blaze (by translating to DataFus
 ## Join the Community
 
 ### Source Code
-Please see [Blaze source code](https://github.com/kwai/blaze) for more information.
+Please see [Auron source code](https://github.com/kwai/auron) for more information.
 
 ### Community
-We're using [Discussions](https://github.com/kwai/blaze/discussions) to connect with other members of our community. We hope that you:
+We're using [Discussions](https://github.com/kwai/auron/discussions) to connect with other members of our community. We hope that you:
 
 - Ask questions you're wondering about.
 - Share ideas.
@@ -146,16 +146,16 @@ We're using [Discussions](https://github.com/kwai/blaze/discussions) to connect 
 - Welcome others who are open-minded. Remember that this is a community we build together 💪 .
   
 ### WeChat Group
-We've set up a WeChat group to help Chinese developers communicate more effectively. If you'd like to join, please email us at blaze@kwai.com.
+We've set up a WeChat group to help Chinese developers communicate more effectively. If you'd like to join, please email us at auron@kwai.com.
 ## Performance
 
-Check [Benchmark Results](https://github.com/kwai/blaze/blob/v4.0.0/benchmark-results/20240701-blaze300.md) with the latest date for the performance comparison with vanilla Spark 3.3.3. The benchmark result shows that Blaze save about 50% time on TPC-DS/TPC-H 1TB datasets. Stay tuned and join us for more upcoming thrilling numbers.
+Check [Benchmark Results](https://github.com/kwai/auron/blob/v4.0.0/benchmark-results/20240701-auron300.md) with the latest date for the performance comparison with vanilla Spark 3.3.3. The benchmark result shows that Auron save about 50% time on TPC-DS/TPC-H 1TB datasets. Stay tuned and join us for more upcoming thrilling numbers.
 
-![Blaze-TPC-DS-1TB-Benchmark](./img/Blaze-TPC-DS-1TB-Benchmark.png)
+![Auron-TPC-DS-1TB-Benchmark](./img/Auron-TPC-DS-1TB-Benchmark.png)
 
 ## Thanks to our contributors
 
 <br>
-<a href="https://github.com/kwai/blaze/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=kwai/blaze" />
+<a href="https://github.com/kwai/auron/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=kwai/auron" />
 </a>

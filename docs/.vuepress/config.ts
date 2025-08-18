@@ -47,7 +47,7 @@ const navbar: NavbarOptions = [
 
 export default defineUserConfig({
   base: '/',
-  title: 'Blaze',
+  title: 'Auron',
   head: [
     ['link', { rel: 'icon', type: 'image/png', href: '/logo-mini.png' }],
   ],

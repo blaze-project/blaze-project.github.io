@@ -1,12 +1,12 @@
 ---
 home: true
-footer: MIT License | Copyright © 2022- the Blaze community
+footer: MIT License | Copyright © 2022- the Auron community
 ---
 
 <div class="home-banner">
   <div class="banner-title-container">
     <div class="banner-title">Run Spark SQL/DataFrame Faster</div>
-    <div class="banner-subtitle">Blaze is an accelerator for Apache Spark which leverages native vectorized execution to accelerate SQL/DataFrame queries.</div>
+    <div class="banner-subtitle">Auron (original name: Blaze) is an accelerator for Apache Spark which leverages native vectorized execution to accelerate SQL/DataFrame queries.</div>
     <div class="github-buttons-container"><GitHubBadge /></div>
     <a class="route-link auto-link vp-hero-action-button primary" href="/documents/getting-started" aria-label="Get Started">Get Started</a>
   </div>
@@ -79,8 +79,8 @@ footer: MIT License | Copyright © 2022- the Blaze community
         Community
       </div>
       <ul class="feature-details">
-        <li>Some cooperators have applied Blaze on production.</li>
-        <li>More are researching and evaluating Blaze.</li>
+        <li>Some cooperators have applied Auron on production.</li>
+        <li>More are researching and evaluating Auron.</li>
       </ul>
     </div>
   </div>
@@ -90,7 +90,7 @@ footer: MIT License | Copyright © 2022- the Blaze community
 <div class="home-para">
   <div class="para-title">Benchmarks</div>
   <div class="para-text">
-    Blaze has passed all TPC-DS/TPC-H benchmark cases. Comparing to Spark-3.5, Blaze is running ~2x faster and save ~50% cluster resources.
+    Auron has passed all TPC-DS/TPC-H benchmark cases. Comparing to Spark-3.5, Auron is running ~2x faster and save ~50% cluster resources.
     See <a href="documents/benchmarks">Benchmark Details</a>.
   </div>
   <div class="home-benchmark-container-wrapper">
@@ -104,7 +104,7 @@ footer: MIT License | Copyright © 2022- the Blaze community
 <div class="home-para">
   <div class="para-title">Cooperators</div>
   <div class="para-text">
-    Blaze currently has some users and contributors. You are invited to join the list by emailing blaze@kwai.com.
+    Auron currently has some users and contributors. You are invited to join the list by emailing auron@kwai.com.
   </div>
   <div class="partners-container">
     <div class="partners">

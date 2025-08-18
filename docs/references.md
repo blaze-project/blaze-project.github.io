@@ -2,9 +2,9 @@
 References
 ---
 
-# Blaze Related Use Cases and Publications
+# Auron Related Use Cases and Publications
 
-For more information about Blaze, please refer to the following links.
+For more information about Auron, please refer to the following links.
 
 
 <table class="my-table">
@@ -15,7 +15,7 @@ For more information about Blaze, please refer to the following links.
     <th>Reference</th>
   </tr>
   <tr>
-    <td>Blaze：SparkSQL Native算子优化在快手的深度优化及大规模应用实践</td>
+    <td>Auron：SparkSQL Native算子优化在快手的深度优化及大规模应用实践</td>
     <td>快手</td>
     <td>Jul 13 2024 </td>
     <td>
@@ -23,7 +23,7 @@ For more information about Blaze, please refer to the following links.
     </td>
   </tr>
    <tr>
-    <td>Blaze：SparkSQL Native 算子优化在快手的设计与实践</td>
+    <td>Auron：SparkSQL Native 算子优化在快手的设计与实践</td>
     <td>快手</td>
     <td>May 21 2023 </td>
     <td>
